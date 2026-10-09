@@ -95,7 +95,12 @@ export class AppController {
   @Render("new")
   postNew(@Body() CreateProductDto: CreateProductDto) {
     console.log(CreateProductDto)
-    this.products.push(CreateProductDto);
+    this.products.push({
+      name:CreateProductDto.name,
+      category:CreateProductDto.category,
+      price:Number(CreateProductDto.price),
+      stock:Number(CreateProductDto.stock)
+    });
     return {
       success: true
     };
