@@ -126,5 +126,9 @@ export class AppController {
       };
     });
     const productsAvgPrice = productsSumPrice / productsCount;
+    console.log(productsCount);
+    console.log(productsAvgPrice);
+    console.log(productsMinPrice);
+    console.log(productsMaxPrice);
   };
 };
