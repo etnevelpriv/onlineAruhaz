@@ -22,7 +22,7 @@
         </thead>
         <tbody>
             <%products.forEach((product)=>{%>
-                <tr>
+                <tr class=<%=product.stock == 0 ? "low-stock" : ""%>>
                     <td>
                         <%=product.name%>
                     </td>
