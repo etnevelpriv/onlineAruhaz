@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Statisztika</title>
+    <link rel="stylesheet" href="/style.css">
 </head>
 
 <body>
@@ -24,19 +25,27 @@
         <tbody>
             <tr>
                 <td>A termékek darabszáma</td>
-                <td></td>
+                <td>
+                    <%=productsCount%>
+                </td>
             </tr>
             <tr>
                 <td>A termékek átlagára (egész számra kerekítve)</td>
-                <td></td>
+                <td>
+                    <%=productsAvgPrice%>
+                </td>
             </tr>
             <tr>
                 <td>A legdrágább termék ára</td>
-                <td></td>
+                <td>
+                    <%=productsMaxPrice%>
+                </td>
             </tr>
             <tr>
                 <td>A legolcsóbb termék ára</td>
-                <td></td>
+                <td>
+                    <%=productsMinPrice%>
+                </td>
             </tr>
         </tbody>
     </table>

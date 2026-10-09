@@ -125,10 +125,16 @@ export class AppController {
         productsMaxPrice = productPrice
       };
     });
-    const productsAvgPrice = productsSumPrice / productsCount;
-    console.log(productsCount);
-    console.log(productsAvgPrice);
-    console.log(productsMinPrice);
-    console.log(productsMaxPrice);
+    const productsAvgPrice = Math.round(productsSumPrice / productsCount);
+    // console.log(productsCount);
+    // console.log(productsAvgPrice);
+    // console.log(productsMinPrice);
+    // console.log(productsMaxPrice);
+    return {
+      productsCount:productsCount,
+      productsAvgPrice:productsAvgPrice,
+      productsMinPrice:productsMinPrice,
+      productsMaxPrice:productsMaxPrice
+    };
   };
 };
