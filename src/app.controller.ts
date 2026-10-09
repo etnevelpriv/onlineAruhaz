@@ -87,7 +87,7 @@ export class AppController {
     productsCloneFiltered.sort((a, b) => b.stock - a.stock);
 
     return {
-      products:productsCloneFiltered
+      products: productsCloneFiltered
     }
   }
 
@@ -97,14 +97,28 @@ export class AppController {
     console.log(CreateProductDto)
     this.products.push(CreateProductDto);
     return {
-      success:true
+      success: true
     };
   };
   @Get("new")
   @Render("new")
   getNew() {
     return {
-      success:false
-    }
-  }
+      success: false
+    };
+  };
+  @Get("stats")
+  @Render("stats")
+  getStats() {
+    const productsClone = [...this.products];
+    const productsCount = productsClone.length;
+    let productsSumPrice = 0;
+    productsClone.forEach((product: Product) => {
+      productsSumPrice += product.price;
+    });
+    const productsAvgPrice = productsSumPrice / productsCount;
+    const productsMaxPrice = productsClone[0].price;
+    const productsMinPrice = productsClone[0].price;
+
+  };
 };
