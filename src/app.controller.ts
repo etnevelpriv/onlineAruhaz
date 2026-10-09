@@ -71,6 +71,9 @@ export class AppController {
   @Get()
   @Render('index')
   getHello() {
+    const productsClone = [...this.products];
+    productsClone.sort((a,b)=>a.price-b.price);
+    console.log(productsClone);
     return {
       title: 'My First NestJS App'
     }
