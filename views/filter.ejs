@@ -21,6 +21,7 @@
         </input-group>
         <input type="submit" value="Keresés">
     </form>
+    <% if (products.length) {%>
     <table>
         <thead>
             <tr>
@@ -49,6 +50,7 @@
                 <%})%>
         </tbody>
     </table>
+    <%}%>
 </body>
 
 </html>
