@@ -25,7 +25,7 @@
         </div>
         <div class="input-group">
             <label for="price">Ár</label>
-            <input type="number" name="price" id="priceInput">
+            <input CreateProductDTOtype="number" name="price" id="priceInput">
         </div>
         <div class="input-group">
             <label for="stock">Készlet</label>
@@ -33,6 +33,10 @@
         </div>
         <input type="submit" value="Mentés">
     </form>
+    <%if (success) {%>
+        <p class="success-post">Sikeres felvitel</p>
+        <%}%>
+
 </body>
 
 </html>

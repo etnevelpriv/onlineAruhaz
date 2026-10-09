@@ -1,11 +1,12 @@
-import { Controller, Get, Query, Render } from '@nestjs/common';
+import { Body, Controller, Get, Query, Render, Post } from '@nestjs/common';
 import { AppService } from './app.service.js';
 import { Product } from './models/interfaces/Products.interface.js';
+import { CreateProductDto } from './models/DTOs/CreateProductDto.js';
 
 @Controller()
 export class AppController {
   constructor(private readonly appService: AppService) { }
-  private readonly products: Product[] = [
+  private products: Product[] = [
     {
       "name": "Vezeték nélküli egér",
       "category": "elektronika",
@@ -87,6 +88,23 @@ export class AppController {
 
     return {
       products:productsCloneFiltered
+    }
+  }
+
+  @Post("new")
+  @Render("new")
+  postNew(@Body() CreateProductDto: CreateProductDto) {
+    console.log(CreateProductDto)
+    this.products.push(CreateProductDto);
+    return {
+      success:true
+    };
+  };
+  @Get("new")
+  @Render("new")
+  getNew() {
+    return {
+      success:false
     }
   }
 };
