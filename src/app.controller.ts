@@ -1,4 +1,4 @@
-import { Controller, Get, Render } from '@nestjs/common';
+import { Controller, Get, Query, Render } from '@nestjs/common';
 import { AppService } from './app.service.js';
 import { Product } from './models/interfaces/Products.interface.js';
 
@@ -72,10 +72,21 @@ export class AppController {
   @Render('index')
   getHello() {
     const productsClone = [...this.products];
-    productsClone.sort((a,b)=>a.price-b.price);
+    productsClone.sort((a, b) => a.price - b.price);
     console.log(productsClone);
     return {
-      products:productsClone
+      products: productsClone
     };
   };
+
+  @Get("filter")
+  @Render("filter")
+  getFilter(@Query("category") category: string) {
+    const productsCloneFiltered = [...this.products].filter((product) => product.category == category);
+    productsCloneFiltered.sort((a, b) => b.stock - a.stock);
+
+    return {
+      products:productsCloneFiltered
+    }
+  }
 };
