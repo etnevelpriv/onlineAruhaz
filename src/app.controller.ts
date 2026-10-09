@@ -75,7 +75,7 @@ export class AppController {
     productsClone.sort((a,b)=>a.price-b.price);
     console.log(productsClone);
     return {
-      title: 'My First NestJS App'
-    }
-  }
-}
+      products:productsClone
+    };
+  };
+};

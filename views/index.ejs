@@ -1,15 +1,44 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>
-        <%= title %>
+        Terméklista
     </title>
     <link rel="stylesheet" href="/style.css">
 </head>
+
 <body>
-    <h1><%= title %></h1>
-    Hello EJS!
+    <table>
+        <thead>
+            <tr>
+                <th>Termék neve</th>
+                <th>Kategória</th>
+                <th>Ár</th>
+                <th>Raktárkészlet</th>
+            </tr>
+        </thead>
+        <tbody>
+            <%products.forEach((product)=>{%>
+                <tr>
+                    <td>
+                        <%=product.name%>
+                    </td>
+                    <td>
+                        <%=product.category%>
+                    </td>
+                    <td>
+                        <%=product.price%>
+                    </td>
+                    <td>
+                        <%=product.stock%>
+                    </td>
+                </tr>
+                <%})%>
+        </tbody>
+    </table>
 </body>
+
 </html>
