@@ -3,3 +3,7 @@ body {
     color:rgb(58, 46, 135);
 }
 
+.low-stock {
+    color: red;
+    font-weight: bold;
+}

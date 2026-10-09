@@ -11,6 +11,15 @@
 </head>
 
 <body>
+    <ul>
+        <li>
+            <a href="/filter">Szűrés</a>
+        </li>
+        <li>
+            <a href="/new">Új termék</a>
+        </li>
+
+    </ul>
     <table>
         <thead>
             <tr>
@@ -22,7 +31,7 @@
         </thead>
         <tbody>
             <%products.forEach((product)=>{%>
-                <tr class=<%=product.stock == 0 ? "low-stock" : ""%>>
+                <tr class=<%=product.stock==0 ? "low-stock" : "" %>>
                     <td>
                         <%=product.name%>
                     </td>
@@ -32,7 +41,7 @@
                     <td>
                         <%=product.price%>
                     </td>
-                    <td class=<%=product.stock < 5 ? "low-stock" : ""%>>
+                    <td class=<%=product.stock < 5 ? "low-stock" : "" %>>
                         <%=product.stock%>
                     </td>
                 </tr>
