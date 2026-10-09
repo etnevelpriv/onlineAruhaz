@@ -10,7 +10,28 @@
 
 <body>
     <form action="/new" method="post">
-        <div class="input-group"></div>
+        <div class="input-group">
+            <label for="name">Termék neve</label>
+            <input type="text" name="name" id="nameInput">
+        </div>
+        <div class="input-group">
+            <label for="category">Kategória</label>
+            <select name="category" id="categorySelect">
+                <option value="elektronika">Elektronika</option>
+                <option value="ruházat">Ruházat</option>
+                <option value="könyv">Könyv</option>
+                <option value="játék">Játék</option>
+            </select>
+        </div>
+        <div class="input-group">
+            <label for="price">Ár</label>
+            <input type="number" name="price" id="priceInput">
+        </div>
+        <div class="input-group">
+            <label for="stock">Készlet</label>
+            <input type="number" name="stock" id="stockInput">
+        </div>
+        <input type="submit" value="Mentés">
     </form>
 </body>
 
