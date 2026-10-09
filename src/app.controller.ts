@@ -113,12 +113,18 @@ export class AppController {
     const productsClone = [...this.products];
     const productsCount = productsClone.length;
     let productsSumPrice = 0;
+    let productsMaxPrice = productsClone[0].price;
+    let productsMinPrice = productsClone[0].price;
     productsClone.forEach((product: Product) => {
-      productsSumPrice += product.price;
+      const productPrice = product.price
+      productsSumPrice += productPrice;
+      if (productPrice < productsMinPrice) {
+        productsMinPrice = productPrice
+      };
+      if (productPrice > productsMaxPrice) {
+        productsMaxPrice = productPrice
+      };
     });
     const productsAvgPrice = productsSumPrice / productsCount;
-    const productsMaxPrice = productsClone[0].price;
-    const productsMinPrice = productsClone[0].price;
-
   };
 };
