@@ -32,7 +32,7 @@
                     <td>
                         <%=product.price%>
                     </td>
-                    <td>
+                    <td class=<%=product.stock < 5 ? "low-stock" : ""%>>
                         <%=product.stock%>
                     </td>
                 </tr>
